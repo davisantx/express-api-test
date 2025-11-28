@@ -11,7 +11,7 @@ const users: User[] = [
     id: 1, 
     name: "joao", 
     cart: {
-      idProducts: [
+      productsId: [
         1,
         2,
         3,
@@ -22,7 +22,7 @@ const users: User[] = [
     id: 2, 
     name: "marcos", 
     cart: {
-      idProducts: [
+      productsId: [
         1,
         2,
         3,
@@ -33,7 +33,7 @@ const users: User[] = [
     id: 3, 
     name: "antonio", 
     cart: {
-      idProducts: [
+      productsId: [
         1,
         2,
         3,
