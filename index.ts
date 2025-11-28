@@ -23,14 +23,14 @@ app.get("/api/users/:id", (request, response) => {
   const user = users.filter((user) => user.id == id);
 
   if (isNaN(id)) return response.status(400).send("Invalid ID");
-  if (!user) return response.sendStatus(404);
+  if (!user) return response.status(404).send("ID not found");
 
   return response.send(user);
 });
 
 app.post("/api/users", (request, response) => {
   if (!request.body.name || !request.body.cart)
-    return response.status(400).send("Some field not find!");
+    return response.status(400).send("Some field was not founded!");
 
   users.push({
     id: (users[users.length - 1]?.id ?? 0) + 1,
@@ -42,7 +42,7 @@ app.post("/api/users", (request, response) => {
 });
 
 app.get("/api/products", (request, response) => {
-  response.status(201).send(products);
+  return response.status(201).send(products);
 });
 
 app.get("/api/products/:id", (request, response) => {
