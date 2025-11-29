@@ -1,20 +1,12 @@
-import type { Cart } from "./cart";
+import type { User } from "../entities/user";
 
-type User = {
-  id: number;
-  name: string;
-  cart: Cart;
-};
-
-const users: User[] = [
+let users: User[] = [
   { 
     id: 1, 
     name: "joao", 
     cart: {
       productsId: [
         1,
-        2,
-        3,
       ],
     }
   },
@@ -23,8 +15,6 @@ const users: User[] = [
     name: "marcos", 
     cart: {
       productsId: [
-        1,
-        2,
         3,
       ],
     }
@@ -34,7 +24,6 @@ const users: User[] = [
     name: "antonio", 
     cart: {
       productsId: [
-        1,
         2,
         3,
       ],
@@ -42,4 +31,8 @@ const users: User[] = [
   },
 ];
 
-export { users };
+const setUsers = (newProduct: User[]) => {
+  users = newProduct;
+};
+
+export { users, setUsers };
