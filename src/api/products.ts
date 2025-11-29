@@ -1,4 +1,4 @@
-import { products, setProducts } from "../mock/products";
+import { products } from "../mock/products";
 import { idIsNumber } from "../validation";
 
 export function getProducts(request: any, response: any) {
@@ -57,7 +57,6 @@ export function deleteProductById(request: any, response: any) {
 
   const userIndex = products.findIndex((user) => user.id == id);
 
-  setProducts(products.splice(userIndex, 1));
-
+  products.splice(userIndex, 1);
   return response.status(201).send(products);
 }

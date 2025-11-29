@@ -10,4 +10,4 @@ const setProducts = (newProduct: Product[]) => {
   products = newProduct;
 };
 
-export { products, setProducts };
+export { products };

@@ -24,7 +24,7 @@ app.get("/api/products", products.getProducts);
 app.get("/api/products/:id", products.getProductsByid);
 app.post("/api/products", products.createProduct);
 app.put("/api/products/:id", products.changeProductById);
-app.delete("/api/products:id", products.deleteProductById);
+app.delete("/api/products/:id", products.deleteProductById);
 
 app.listen(PORT, () => {
   console.log(`Run on http://localhost:${PORT}`);

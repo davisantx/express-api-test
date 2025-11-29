@@ -1,5 +1,5 @@
 import { idIsNumber } from "../validation";
-import { users, setUsers } from "../mock/users";
+import { users } from "../mock/users";
 
 export function getUsers(request: any, response: any) {
   return response.send(users);
@@ -52,7 +52,6 @@ export function deleteUserById(request: any, response: any) {
   if (!id) return response.status(400).send("Invalid ID");
   if (userIndex == -1) return response.status(404).send("ID not found");
 
-  setUsers(users.splice(userIndex, 1));
-
+  users.splice(userIndex, 1);
   return response.status(201).send(users);
 }

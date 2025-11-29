@@ -35,4 +35,4 @@ const setUsers = (newProduct: User[]) => {
   users = newProduct;
 };
 
-export { users, setUsers };
+export { users };
